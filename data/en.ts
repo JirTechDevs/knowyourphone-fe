@@ -48,6 +48,15 @@ export const en = {
   keepFor: 'Keep for',
   condition: 'Condition',
   matchedAgainst: 'Matched against the current Tokopedia & Shopee catalog.',
+  specsToggleShow: 'See full specs',
+  specsToggleHide: 'Hide specs',
+  specsChipset: 'Chipset',
+  specsRam: 'RAM',
+  specsStorage: 'Storage',
+  specsBattery: 'Battery',
+  specsCamera: 'Main camera',
+  specsAntutu: 'AnTuTu',
+  specsDisplay: 'Display',
 };
 
 export type Strings = typeof en;

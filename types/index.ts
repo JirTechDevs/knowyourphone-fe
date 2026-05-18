@@ -5,6 +5,16 @@ export type StockStatus = 'in' | 'limited' | 'second';
 export type Language = 'en' | 'id';
 export type Theme = 'light' | 'dark';
 
+export interface PhoneSpecs {
+  chipset: string;
+  ram: string;
+  storage: string;
+  battery: string;
+  mainCameraMP: string;
+  antutu: string;
+  display: string;
+}
+
 export interface Phone {
   id: string;
   name: string;
@@ -14,6 +24,7 @@ export interface Phone {
   stock: StockStatus;
   enReasons: string[];
   idReasons: string[];
+  specs: PhoneSpecs;
 }
 
 export interface UserInput {

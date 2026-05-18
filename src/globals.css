@@ -662,6 +662,57 @@ em { font-style: normal; color: var(--kp-accent); }
   margin-top: 2px;
 }
 
+/* Specs toggle */
+.kp-specs-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--kp-fg-faint);
+  letter-spacing: 0.02em;
+}
+.kp-specs-toggle:hover { color: var(--kp-fg-muted); }
+.kp-specs-chevron {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.18s ease;
+}
+.kp-specs-chevron.open { transform: rotate(180deg); }
+.kp-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--kp-border);
+}
+.kp-specs-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.kp-specs-full { grid-column: 1 / -1; }
+.kp-specs-grid dt {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kp-fg-faint);
+}
+.kp-specs-grid dd {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--kp-fg-muted);
+}
+
 /* Buy buttons */
 .kp-buy {
   display: grid;

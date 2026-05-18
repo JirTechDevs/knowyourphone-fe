@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Icon } from '@/components/ui/Icon';
 import { PhonePlaceholder } from '@/components/ui/PhonePlaceholder';
 import { AlternativeCard } from './AlternativeCard';
@@ -16,6 +17,7 @@ interface ResultCardProps {
 export function ResultCard({ recommendation, input, lang, t, onStartOver }: ResultCardProps) {
   const { primary, alts } = recommendation;
   const reasons = reasonLines(primary, input, lang);
+  const [specsOpen, setSpecsOpen] = useState(false);
 
   let stockLabel = t.inStock;
   let stockClass = 'in';
@@ -64,6 +66,27 @@ export function ResultCard({ recommendation, input, lang, t, onStartOver }: Resu
             </li>
           ))}
         </ul>
+
+        <button
+          className="kp-specs-toggle"
+          onClick={() => setSpecsOpen((v) => !v)}
+          aria-expanded={specsOpen}
+        >
+          <span>{specsOpen ? t.specsToggleHide : t.specsToggleShow}</span>
+          <span className={`kp-specs-chevron${specsOpen ? ' open' : ''}`}>▾</span>
+        </button>
+
+        {specsOpen && (
+          <dl className="kp-specs-grid">
+            <div><dt>{t.specsChipset}</dt><dd>{primary.specs.chipset}</dd></div>
+            <div><dt>{t.specsRam}</dt><dd>{primary.specs.ram}</dd></div>
+            <div><dt>{t.specsStorage}</dt><dd>{primary.specs.storage}</dd></div>
+            <div><dt>{t.specsBattery}</dt><dd>{primary.specs.battery}</dd></div>
+            <div><dt>{t.specsCamera}</dt><dd>{primary.specs.mainCameraMP}</dd></div>
+            <div><dt>{t.specsAntutu}</dt><dd>{primary.specs.antutu}</dd></div>
+            <div className="kp-specs-full"><dt>{t.specsDisplay}</dt><dd>{primary.specs.display}</dd></div>
+          </dl>
+        )}
       </section>
 
       <div className="kp-r-buy">

@@ -50,4 +50,13 @@ export const id: Strings = {
   keepFor: 'Lama pakai',
   condition: 'Kondisi',
   matchedAgainst: 'Kami cocokkan dari katalog HP terkini di Tokopedia & Shopee.',
+  specsToggleShow: 'Lihat spek lengkap',
+  specsToggleHide: 'Sembunyikan spek',
+  specsChipset: 'Chipset',
+  specsRam: 'RAM',
+  specsStorage: 'Penyimpanan',
+  specsBattery: 'Baterai',
+  specsCamera: 'Kamera utama',
+  specsAntutu: 'AnTuTu',
+  specsDisplay: 'Layar',
 };
